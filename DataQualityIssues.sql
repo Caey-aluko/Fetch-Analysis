@@ -12,4 +12,4 @@ SELECT r.receipt_id, r.purchased_item_count, COUNT(ri.receipt_item_id)
 FROM receipts r
 LEFT JOIN receipt_items ri ON r.receipt_id = ri.receipt_id
 GROUP BY r.receipt_id
-HAVING COUNT(ri.receipt_item_id) != r.purchased_item_count
+HAVING COUNT(ri.receipt_item_id) != r.purchased_item_count;
