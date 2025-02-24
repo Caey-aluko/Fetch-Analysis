@@ -8,7 +8,9 @@ LEFT JOIN brands b ON ri.brand_id = b.brand_id
 WHERE b.brand_code IS NULL;
 
 -- Mismatch in Purchased Item Count
-SELECT r.receipt_id, r.purchased_item_count, COUNT(ri.receipt_item_id)
+SELECT r.receipt_id, 
+       r.purchased_item_count, 
+       COUNT(ri.receipt_item_id)
 FROM receipts r
 LEFT JOIN receipt_items ri ON r.receipt_id = ri.receipt_id
 GROUP BY r.receipt_id
